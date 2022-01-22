@@ -1,0 +1,148 @@
+.global-container {
+  width: 100%;
+  position: relative;
+  background-color: orange;
+  height: 1000vh;
+  z-index: 10;
+}
+
+.global-container .main-container {
+  height: 200vh;
+  width: 100%;
+  background-color: orangered;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-box-shadow: 0px -1px 20px 1px #00000054;
+          box-shadow: 0px -1px 20px 1px #00000054;
+}
+
+/*header*/
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header > span {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 2em;
+}
+
+.header .btn {
+  background-color: transparent;
+  border: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.header .btn > span {
+  display: block;
+  margin-bottom: 9px;
+  height: 3px;
+  width: 55px;
+  background-color: black;
+  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+  transition: opacity 1s ease, -webkit-transform 1s ease;
+  transition: transform 1s ease, opacity 1s ease;
+  transition: transform 1s ease, opacity 1s ease, -webkit-transform 1s ease;
+}
+
+/*header .open*/
+.global-container.open .main-container {
+  position: absolute;
+  -webkit-transform: translate(-40%, 5%);
+          transform: translate(-40%, 5%);
+}
+
+.global-container.open .main-container .header .btn > span:nth-child(1) {
+  -webkit-transform: translateY(12px) rotate(135deg);
+          transform: translateY(12px) rotate(135deg);
+}
+
+.global-container.open .main-container .header .btn > span:nth-child(2) {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  opacity: 0;
+}
+
+.global-container.open .main-container .header .btn > span:nth-child(3) {
+  -webkit-transform: translateY(-12px) rotate(-135deg);
+          transform: translateY(-12px) rotate(-135deg);
+}
+
+/*nav*/
+nav {
+  position: fixed;
+  z-index: -1;
+  top: 10%;
+  right: 10%;
+}
+
+nav ul {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+}
+
+nav ul li {
+  margin-bottom: 15px;
+  font-size: 2em;
+  opacity: 0;
+  -webkit-transform: translateZ(-5000px) rotateZ(1080deg);
+          transform: translateZ(-5000px) rotateZ(1080deg);
+  -webkit-transition: all 1.0s ease;
+  transition: all 1.0s ease;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/*nav open*/
+.global-container.open nav ul {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+}
+
+.global-container.open nav ul li {
+  margin-bottom: 15px;
+  font-size: 2em;
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.global-container.open nav ul li:nth-child(1) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.global-container.open nav ul li:nth-child(2) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.global-container.open nav ul li:nth-child(3) {
+  -webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
+}
+
+.global-container.open nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style1.css.map */
